@@ -118,29 +118,35 @@
 
         function showMessage() {
             showNextQuestion();
-            alert("The next letter of code is : {6}!");
+            alert("The first digit of code is : {6}!");
+            redirectToTop();
         }
-
+        
         function showMessage2() {
             showNextQuestion();
-            alert("The next letter of code is : {7}!");
+            alert("The next digit of code is : {7}!");
+            redirectToTop();
         }
 
         function showMessage3() {
             showNextQuestion();
-            alert("The next letter of code is : {5}!");
+            alert("The next digit of code is : {5}!");
+            redirectToTop();
         }
 
         function showMessage4() {
             showNextQuestion();
-            alert("The next letter of code is : {2}!");
+            alert("The next digit of code is : {2}!");
+            redirectToTop();
         }
         function showMessage5() {
             showNextQuestion();
-            alert("The next letter of code is : {4}!");
+            alert("The last digit of code is : {4}!");
+            redirectToTop();
         }
         function showMessage0() {
             alert("Oops ! Noting avilable here !");
+            redirectToTop();
         }
 
         function showNextQuestion() {
@@ -177,6 +183,10 @@
             }, 3000); // Adjust the delay as needed
         }
 
+        function redirectToTop() {
+            window.location.href = '#top'; 
+        }
+
         function showPopup() {
             var popup = document.querySelector('.popup');
             popup.style.display = 'block';
@@ -204,6 +214,7 @@
     </script>
 </head>
 <body>
+    <div id="top"></div>
     <div class="container">
         <h2>VIRTUAL TREASURE HUNT - TECHSTORM</h2>
     </div>
@@ -246,7 +257,7 @@
 
     <!-- Popup Window -->
     <div class="popup">
-        <p>This level is completed here!<br><br><a href="https://docs.google.com/forms/d/1wrn1N8kY0kp7dL8KFSF2cvGG8mPZr7YQxSrI2KfXHis/edit?ts=659f7062">Click here to proceed ⇨</a></p>
+        <p>This level is completed here!<br><br><a href="https://docs.google.com/forms/d/1wrn1N8kY0kp7dL8KFSF2cvGG8mPZr7YQxSrI2KfXHis/edit?ts=659f7062">Click here to proceed</a></p>
     </div>
     
 </body>
