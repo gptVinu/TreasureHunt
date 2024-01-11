@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treasure-Hunt</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="top"></div>
+    <div class="container">
+        <h2>VIRTUAL TREASURE HUNT - TECHSTORM</h2>
+    </div>
+
+    <!-- Questions Container -->
+    <div class="q-container" style="display: block;">
+        <p>Question 1: What is the day of the techstorm?</p>
+    </div>
+    <div class="q-container">
+        <p>Question 2: Find the missing word "LOVE  _ _ _ _" ?</p>
+    </div>
+    <div class="q-container">
+        <p>Question 3: A grey object that can move by petrol?</p>
+    </div>
+    <div class="q-container">
+        <p>Question 4: On which planet we are living?</p>
+    </div>
+    <div class="q-container">
+        <p>Question 5: How many "_ corporation" in the treasure?</p>
+    </div>
+
+    <!-- Image Container -->
+    <div class="img-container">
+        <img src="main-image.jpeg" alt="main-image" usemap="#image-map">
+        <map name="image-map">
+            <area coords="932,1116,934,1136,999,1158,1003,1137" shape="poly" onclick="showMessage()">
+            <!-- <area shape="rect" coords="950,1150,1055,1230" onclick="showMessage()"> -->
+            <area shape="poly" coords="328,1503,412,1520,423,1481,342,1450" onclick="showMessage2()">
+            <area shape="poly" coords="118,1818,179,1841,232,1828,247,1784,203,1758,147,1763" onclick="showMessage3()">
+            <area  shape="poly" coords="438,1366,452,1426,517,1446,568,1409,556,1346,526,1317,487,1318,464,1318" onclick="showMessage4()">
+            <area shape="poly" coords="869,727,1024,687,1024,717,860,798" onclick="showMessage5()">
+            <area shape="rect" coords="340,1515,440,1585" onclick="showMessage0()">
+            <area shape="rect" coords="525,160,580,215" onclick="showMessage0()">
+            <area shape="rect" coords="1130,450,1215,620" onclick="showMessage0()">
+        </map>
+    </div>
+
+    <!-- Celebration Overlay -->
+    <div class="celebration"></div>
+
+    <!-- Popup Window -->
+    <div class="popup">
+        <p>This level is completed here!<br><br><a href="https://docs.google.com/forms/d/1wrn1N8kY0kp7dL8KFSF2cvGG8mPZr7YQxSrI2KfXHis/edit?ts=659f7062">Click here to proceed ➜</a></p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
