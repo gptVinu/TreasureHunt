@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treasure-Hunt</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            background-image: url('bg-image.jpg'); 
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .container {
+            text-align: center;
+            text-shadow: #fff;
+            font-size: 5vh;
+            background: linear-gradient(45deg, #3498db, #1abc9c);
+            color: #fff;
+            padding: 0px;
+            border-bottom: 0px solid #2980b9;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .q-container {
+            text-align: center;
+            font-size: 2vh;
+            margin: 20px auto;
+            padding: 10px;
+            border: 2px solid #3498db;
+            border-radius: 10px;
+            background-color: #ecf0f1;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: none;
+        }
+
+        .img-container {
+            border: 5px solid #2ecc71;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 20px auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        img {
+            width: 100%;
+            display: block;
+        }
+
+        map {
+            display: block;
+        }
+
+        @keyframes sparkle {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0); }
+        }
+
+        @keyframes bomb {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.5); }
+            100% { transform: scale(1); }
+        }
+
+        .celebration {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.8);
+            z-index: 1000;
+        }
+
+        .celebration img {
+            position: absolute;
+            opacity: 1;
+            animation-duration: 1.5s;
+        }
+
+        .celebration img.sparkle {
+            width: 20px;
+            height: 20px;
+            animation-name: sparkle;
+            animation-iteration-count: infinite;
+        }
+
+        .celebration img.bomb {
+            width: 50px;
+            height: 50px;
+            animation-name: bomb;
+            animation-iteration-count: infinite;
+        }
+
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #fff;
+            padding: 20px;
+            border: 2px solid #3498db;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+    </style>
+    <script>
+        var currentQuestionIndex = 0;
+
+        function showMessage() {
+            showNextQuestion();
+            alert("The next letter of code is : {J}!");
+        }
+
+        function showMessage2() {
+            showNextQuestion();
+            alert("The next letter of code is : {Q}!");
+        }
+
+        function showMessage3() {
+            showNextQuestion();
+            alert("The next letter of code is : {K}!");
+        }
+
+        function showMessage4() {
+            showNextQuestion();
+            alert("The next letter of code is : {E}!");
+        }
+        function showMessage5() {
+            showNextQuestion();
+            alert("The next letter of code is : {I}!");
+        }
+        function showMessage0() {
+            alert("Oops ! Noting avilable here !");
+        }
+
+        function showNextQuestion() {
+            var questions = document.querySelectorAll('.q-container');
+            
+            if (currentQuestionIndex < questions.length) {
+                questions[currentQuestionIndex].style.display = 'none';
+                currentQuestionIndex++;
+            }
+
+            if (currentQuestionIndex < questions.length) {
+                questions[currentQuestionIndex].style.display = 'block';
+            } else {
+                // Last question completed, trigger celebration
+                triggerCelebration();
+            }
+        }
+
+        function triggerCelebration() {
+            var celebration = document.querySelector('.celebration');
+            celebration.style.display = 'block';
+
+            // Display sparkle and bomb animations
+            for (let i = 0; i < 100; i++) {
+                createSparkle();
+            }
+            for (let i = 0; i < 5; i++) {
+                createBomb();
+            }
+
+            // Display popup after a delay
+            setTimeout(function() {
+                showPopup();
+            }, 3000); // Adjust the delay as needed
+        }
+
+        function showPopup() {
+            var popup = document.querySelector('.popup');
+            popup.style.display = 'block';
+        }
+
+        function createSparkle() {
+            var sparkle = document.createElement('img');
+            sparkle.src = 'sparkle.jpg';
+            sparkle.className = 'sparkle';
+            sparkle.style.top = Math.random() * window.innerHeight + 'px';
+            sparkle.style.left = Math.random() * window.innerWidth + 'px';
+
+            document.querySelector('.celebration').appendChild(sparkle);
+        }
+
+        function createBomb() {
+            var bomb = document.createElement('img');
+            bomb.src = 'bomb2.png';
+            bomb.className = 'bomb';
+            bomb.style.top = Math.random() * window.innerHeight + 'px';
+            bomb.style.left = Math.random() * window.innerWidth + 'px';
+
+            document.querySelector('.celebration').appendChild(bomb);
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h2>VIRTUAL TREASURE HUNT - TECHSTORM</h2>
+    </div>
+
+    <!-- Questions Container -->
+    <div class="q-container" style="display: block;">
+        <p>Question 1: What is the day of the techstorm?</p>
+    </div>
+    <div class="q-container">
+        <p>Question 2: Find the missing word "LOVE _ _ _ _" ?</p>
+    </div>
+    <div class="q-container">
+        <p>Question 3: A grey object that can move by petrol?</p>
+    </div>
+    <div class="q-container">
+        <p>Question 4: On which plaent we are living?</p>
+    </div>
+    <div class="q-container">
+        <p>Question 5: How many corporation in the treasure?</p>
+    </div>
+
+    <!-- Image Container -->
+    <div class="img-container">
+        <img src="main-image.jpeg" alt="main-image" usemap="#image-map">
+        <map name="image-map">
+            <area coords="932,1116,934,1136,999,1158,1003,1137" shape="poly" onclick="showMessage()">
+            <!-- <area shape="rect" coords="950,1150,1055,1230" onclick="showMessage()"> -->
+            <area shape="poly" coords="328,1503,412,1520,423,1481,342,1450" onclick="showMessage2()">
+            <area shape="poly" coords="118,1818,179,1841,232,1828,247,1784,203,1758,147,1763" onclick="showMessage3()">
+            <area  shape="poly" coords="438,1366,452,1426,517,1446,568,1409,556,1346,526,1317,487,1318,464,1318" onclick="showMessage4()">
+            <area shape="poly" coords="869,727,1024,687,1024,717,860,798" onclick="showMessage5()">
+            <area shape="rect" coords="340,1515,440,1585" onclick="showMessage0()">
+            <area shape="rect" coords="525,160,580,215" onclick="showMessage0()">
+            <area shape="rect" coords="1130,450,1215,620" onclick="showMessage0()">
+        </map>
+    </div>
+
+    <!-- Celebration Overlay -->
+    <div class="celebration"></div>
+
+    <!-- Popup Window -->
+    <div class="popup">
+        <p>This level is completed here!<br><br><a href="https://www.w3schools.com/html/tryit.asp?filename=tryhtml_images_map3">Click here to proceed</a></p>
+    </div>
+    
+</body>
+</html>
