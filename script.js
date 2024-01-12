@@ -1,33 +1,35 @@
 var currentQuestionIndex = 0;
 
-function showMessage5() {
+function showMessage() {
     showNextQuestion();
-    alert("The next digit of code is : {6}!");
+    alert("The first digit of code is : {6}!");
     redirectToTop();
 }
-function showMessage1() {
+        
+function showMessage2() {
     showNextQuestion();
-    alert("The next digit of code is : {4}!");
+    alert("The next digit of code is : {7}!");
     redirectToTop();
 }
+
 function showMessage3() {
     showNextQuestion();
     alert("The next digit of code is : {5}!");
     redirectToTop();
 }
-function showMessage0() {
-    alert("Oops ! Noting avilable here !");
-    redirectToTop();
-}
-function showMessage2() {
+
+function showMessage4() {
     showNextQuestion();
     alert("The next digit of code is : {2}!");
     redirectToTop();
 }
-
-function showMessage4() {
+function showMessage5() {
     showNextQuestion();
-    alert("The next digit of code is : {7}!");
+    alert("The last digit of code is : {4}!");
+    redirectToTop();
+}
+function showMessage0() {
+    alert("Oops ! Noting avilable here !");
     redirectToTop();
 }
 
